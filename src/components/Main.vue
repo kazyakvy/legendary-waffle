@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <button>
-      Поменять строение
-    </button>
-    <molecule :edges="edges" :vertices="vertices" :weights="weights"></molecule>
+  <div class="main">
+    <div>
+      <button class="button">
+        Поменять строение
+      </button>
+    </div>
+    <div class="svg">
+      <molecule :edges="edges" :vertices="vertices" :weights="weights"></molecule>
+    </div>
   </div>
 </template>
 
@@ -21,6 +25,11 @@
         weights,
         edges
       };
+    },
+    mounted () {
+      setTimeout(() => {
+        this.edges[0].isVisible = false;
+      }, 2000);
     },
     methods: {
 
