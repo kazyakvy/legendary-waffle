@@ -6,7 +6,7 @@
         <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
       </g>
     </g>
-    <g id="kek">
+    <g>
       <line class="22 24" stroke-linecap="null" stroke-linejoin="null" id="svg_2" y2="162" x2="280.5" y1="186" x1="286.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
       <line class="23 24" stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="192.786866" x2="260.327832" y1="196.065554" x1="281.311436" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
       <line class="17 22" stroke-linecap="null" stroke-linejoin="null" id="svg_8" y2="142.295068" x2="265.573733" y1="159.999984" x1="277.704879" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
@@ -64,12 +64,17 @@
     watch: {
       edges: {
         handler (edges) {
-          edges.forEach(edge => {
-            let line = document.getElementsByClassName(edge.vertices.join(' '))[0];
-            line.style.display = edge.isVisible ? 'inline-block' : 'none';
-          });
+          if (edges) {
+            setTimeout(() => {
+              edges.forEach(edge => {
+                let line = document.getElementsByClassName(edge.vertices.join(' '))[0];
+                line.style.display = edge.isVisible ? 'inline-block' : 'none';
+              });
+            }, 100);
+          }
         },
-        deep: true
+        deep: true,
+        immediate: true
       }
     }
   }

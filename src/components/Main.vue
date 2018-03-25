@@ -16,6 +16,7 @@
   import vertices from '../configs/vertices'
   import weights from '../configs/weights'
   import edges from '../configs/edges'
+  import _ from 'lodash'
 
   export default {
     data () {
@@ -23,16 +24,31 @@
         msg: 12,
         vertices,
         weights,
-        edges
+        edges,
+        fragmentation: []
       };
     },
     mounted () {
-      setTimeout(() => {
-        this.edges[0].isVisible = false;
-      }, 2000);
+//      let id = setInterval(() => {
+//        this.pluck();
+//        if (_.every(this.edges, edge => edge.isVisible)) {
+//          clearInterval(id);
+//        }
+//      }, 300);
     },
     methods: {
-
+      pluck () {
+        this.fragmentation.push(this.edges);
+        for (let i = this.edges.length - 1; i >= 0; i--) {
+          let isVisible = this.edges[i].isVisible;
+          if (!isVisible) {
+            this.edges[i].isVisible = true;
+            break;
+          } else {
+            this.edges[i].isVisible = false;
+          }
+        }
+      }
     },
     components: {
       Molecule
