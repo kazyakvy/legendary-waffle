@@ -1,175 +1,174 @@
 export default [
   // {
   //   vertices: [1, 2],
-  //   isVisible: false,
+  //   isVisible: true,
   //   id: 1
   // },
   // {
   //   vertices: [3, 2],
-  //   isVisible: false,
+  //   isVisible: true,
   //   id: 2
   // },
   // {
   //   vertices: [4, 2],
-  //   isVisible: false,
+  //   isVisible: true,
   //   id: 3
   // },
-  {
-    vertices: [5, 2],
-    isVisible: false,
-    id: 4,
-    dependencies: [[13, 14, 17, 22, 23], [13, 15, 24]]
-  },
-  {
-    vertices: [5, 9],
-    isVisible: false,
-    id: 5,
-    dependencies: [[13, 14, 17, 22, 23], [13, 15, 24]]
-  },
+  // {
+  //   vertices: [6, 9],
+  //   isVisible: true,
+  //   id: 4
+  // },
   // {
   //   vertices: [8, 9],
-  //   isVisible: false,
+  //   isVisible: true,
   //   id: 6
   // },
   // {
   //   vertices: [7, 9],
-  //   isVisible: false,
+  //   isVisible: true,
   //   id: 7
   // },
   // {
-  //   vertices: [6, 9],
-  //   isVisible: false,
-  //   id: 8
-  // },
-  {
-    vertices: [5, 10],
-    isVisible: false,
-    id: 9,
-    dependencies: [[13, 14, 17, 22, 23], [13, 15, 24]]
-  },
-  // {
-  //   vertices: [11, 10],
-  //   isVisible: false,
-  //   id: 10
-  // },
-  // {
   //   vertices: [12, 10],
-  //   isVisible: false,
-  //   id: 11
+  //   isVisible: true,
+  //   id: 8
   // },
   // {
   //   vertices: [13, 10],
-  //   isVisible: false,
-  //   id:12
+  //   isVisible: true,
+  //   id: 9
   // },
   {
-    vertices: [5, 14],
-    isVisible: false,
+    vertices: [20, 18],
+    isVisible: true,
+    id: 10,
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
+  },
+  {
+    vertices: [18, 19],
+    isVisible: true,
+    id: 11,
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
+  },
+// {
+  //   vertices: [15, 16],
+  //   isVisible: true,
+  //   id: 12,
+  //   dependencies: [[18, 21, 24], [19, 22, 23]]
+  // },
+  {
+    vertices: [5, 9],
+    isVisible: true,
     id: 13,
-    dependencies: [[14, 17, 22, 23], [15, 24]]
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+  },
+  {
+    vertices: [5, 2],
+    isVisible: true,
+    id: 14,
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+  },
+  {
+    vertices: [5, 10],
+    isVisible: true,
+    id: 15,
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+  },
+  {
+    vertices: [5, 14],
+    isVisible: true,
+    id: 16,
+    dependencies: [[21, 24], [18, 19, 22, 23]]
+  },
+  {
+    vertices: [18, 21],
+    isVisible: true,
+    id: 17,
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
   },
   {
     vertices: [15, 14],
-    isVisible: false,
-    id: 14,
-    dependencies: [[15, 24], [17, 22, 23]]
+    isVisible: true,
+    id: 18,
+    dependencies: [[21, 24], [19, 22, 23]]
   },
-  {
-    vertices: [23, 14],
-    isVisible: false,
-    id: 15,
-    dependencies: [[24], [14, 17, 22, 23]]
-  },
-  // {
-  //   vertices: [15, 16],
-  //   isVisible: false,
-  //   id: 16
-  // },
   {
     vertices: [15, 17],
-    isVisible: false,
-    id: 17,
-    dependencies: [[14, 15, 24], [22, 23]]
+    isVisible: true,
+    id: 19,
+    dependencies: [[22, 23], [18, 21, 24]]
   },
   {
     vertices: [18, 17],
-    isVisible: false,
-    id: 18,
-    dependencies: [[22, 23], [17, 14, 15, 24]]
+    isVisible: true,
+    id: 20,
+    dependencies: [[22, 23], [19, 18, 21, 24]]
   },
-  // {
-  //   vertices: [18, 19],
-  //   isVisible: false,
-  //   id: 19
-  // },
-  // {
-  //   vertices: [18, 20],
-  //   isVisible: false,
-  //   id: 20
-  // },
   {
-    vertices: [18, 21],
-    isVisible: false,
+    vertices: [23, 14],
+    isVisible: true,
     id: 21,
-    dependencies: [[18, 17, 14, 15, 24], [18, 22, 23]]
+    dependencies: [[24], [18, 19, 22, 23]]
   },
   {
-    vertices: [22, 17],    isVisible: false,
+    vertices: [22, 17],
+    isVisible: true,
     id: 22,
-    dependencies: [[23], [17, 14, 15, 24]]
+    dependencies: [[23], [19, 18, 21, 24]]
   },
   {
     vertices: [22, 24],
-    isVisible: false,
+    isVisible: true,
     id: 23,
     dependencies: []
   },
   {
     vertices: [23, 24],
-    isVisible: false,
+    isVisible: true,
     id: 24,
     dependencies: []
   },
-  {
-    vertices: [24, 25],
-    isVisible: false,
-    id: 25,
-    dependencies: []
-  },
-  {
-    vertices: [24, 26],
-    isVisible: false,
-    id: 26,
-    dependencies: []
-  },
-  {
-    vertices: [25, 27],
-    isVisible: false,
-    id: 27,
-    dependencies: [[25], [29, 30, 28, 26]]
-  },
-  {
-    vertices: [26, 28],
-    isVisible: false,
-    id: 28,
-    dependencies: [[26], [30, 29, 27, 25]]
-  },
-  {
-    vertices: [27, 29],
-    isVisible: false,
-    id: 29,
-    dependencies: [[27, 25], [30, 28, 26]]
-  },
-  {
-    vertices: [28, 29],
-    isVisible: false,
-    id: 30,
-    dependencies: [[28, 26], [29, 27, 25]]
-  },
-  {
-    vertices: [29, 30],
-    isVisible: false,
-    id: 31,
-    dependencies: [[29, 27, 25], [30, 28, 26]]
-  },
+  // {
+  //   vertices: [24, 25],
+  //   isVisible: true,
+  //   id: 25,
+  //   dependencies: []
+  // },
+  // {
+  //   vertices: [24, 26],
+  //   isVisible: true,
+  //   id: 26,
+  //   dependencies: []
+  // },
+  // {
+  //   vertices: [25, 27],
+  //   isVisible: true,
+  //   id: 27,
+  //   dependencies: [[25], [29, 30, 28, 26]]
+  // },
+  // {
+  //   vertices: [26, 28],
+  //   isVisible: true,
+  //   id: 28,
+  //   dependencies: [[26], [30, 29, 27, 25]]
+  // },
+  // {
+  //   vertices: [27, 29],
+  //   isVisible: true,
+  //   id: 29,
+  //   dependencies: [[27, 25], [30, 28, 26]]
+  // },
+  // {
+  //   vertices: [28, 29],
+  //   isVisible: true,
+  //   id: 30,
+  //   dependencies: [[28, 26], [29, 27, 25]]
+  // },
+  // {
+  //   vertices: [29, 30],
+  //   isVisible: true,
+  //   id: 31,
+  //   dependencies: [[29, 27, 25], [30, 28, 26]]
+  // },
 ]
