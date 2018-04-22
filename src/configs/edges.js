@@ -35,57 +35,63 @@ export default [
   //   id: 8
   // },
   // {
-  //   vertices: [13, 10],
+  //   vertices: [15, 16],
   //   isVisible: true,
-  //   id: 9
+  //   id: 9,
+  //   dependencies: [[18, 21, 24], [19, 22, 23]]
   // },
   {
     vertices: [20, 18],
     isVisible: true,
     id: 10,
-    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]],
+    group: 1
   },
   {
     vertices: [18, 19],
     isVisible: true,
     id: 11,
-    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]],
+    group: 1
   },
-// {
-  //   vertices: [15, 16],
-  //   isVisible: true,
-  //   id: 12,
-  //   dependencies: [[18, 21, 24], [19, 22, 23]]
-  // },
+  {
+    vertices: [18, 21],
+    isVisible: true,
+    id: 12,
+    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]],
+    group: 1
+  },
   {
     vertices: [5, 9],
     isVisible: true,
     id: 13,
-    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]],
+    group: 2
   },
   {
     vertices: [5, 2],
     isVisible: true,
     id: 14,
-    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]],
+    group: 2
   },
   {
     vertices: [5, 10],
     isVisible: true,
     id: 15,
-    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]]
+    dependencies: [[16, 21, 24], [16, 18, 19, 22, 23]],
+    group: 2
+  },
+  {
+    vertices: [13, 10],
+    isVisible: true,
+    id: 16
   },
   {
     vertices: [5, 14],
     isVisible: true,
-    id: 16,
-    dependencies: [[21, 24], [18, 19, 22, 23]]
-  },
-  {
-    vertices: [18, 21],
-    isVisible: true,
     id: 17,
-    dependencies: [[20, 22, 23], [20, 19, 18, 21, 24]]
+    dependencies: [[21, 24], [18, 19, 22, 23]]
   },
   {
     vertices: [15, 14],

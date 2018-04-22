@@ -1,21 +1,44 @@
 <template>
   <div class="main">
     <div class="header">
-      <div class="control-bar">
-        <button class="button is-info" @click="start" :disabled="end">
-          Начать строение
-        </button>
-        <input class="input" type="number" v-model="outputNumber" min="0" name="number" title="Количество вывода">
-        <span>
-          Всего: {{ fragmentation.length }}
+      <div class="control-bar columns">
+        <div class="column is-narrow">
+          <button class="button is-info" @click="start" :disabled="end">
+            Начать строение
+          </button>
+        </div>
+        <span class="column is-narrow">
+          Разбиений: {{ fragmentation.length }}
         </span>
-        <button class="button is-warning" @click="finish" :disabled="end">
-          Закончить
-        </button>
+        <div class="column is-narrow">
+          <button class="button is-warning" @click="finish" :disabled="end">
+            Закончить
+          </button>
+        </div>
+        <div class="column">
+          Количество вывода:
+          <input class="input"
+                 type="number"
+                 v-model.number="outputNumber"
+                 min="0"
+                 name="number"
+          >
+        </div>
+        <div class="column">
+          Время итерации (сек):
+          <input class="input"
+                 type="number"
+                 v-model.number="iterationTime"
+                 min="0"
+                 name="number"
+          >
+        </div>
+        <div class="column is-narrow">
+          <button class="button is-danger" @click="reset">
+            Перезапустить
+          </button>
+        </div>
       </div>
-      <button class="button is-danger" @click="reset">
-        Перезапустить
-      </button>
     </div>
     <div class="svg">
       <molecule :edges="edges"
@@ -50,25 +73,31 @@
         fragmentation: [],
         outputNumber: 0,
         end: false,
-        intervalId: null
+        intervalId: null,
+        isSpec: false,
+        iterationTime: 0
       };
     },
     methods: {
       reset () {
+        clearInterval(this.intervalId);
         this.fragmentation = [];
         this.end = false;
         this.edges.forEach(edge => edge.isVisible = true);
       },
       finish () {
+        clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
           this.fragmentation.push(this.edges.map(edge => edge.isVisible ? 1 : 0));
+          this.specLoop();
         }
-        let fragmentation;
-        while (!fragmentation || !fragmentation.every(edge => !edge)) {
-          fragmentation = this.pluck();
-          this.fragmentation.push(fragmentation);
+        while (!this.edges.filter((edge, index) => index < 6).every(edge => !edge.isVisible)) {
+          this.fragmentation.push(this.specPluck());
         }
-        clearInterval(this.intervalId);
+        while (!this.edges.every(edge => !edge.isVisible)) {
+          this.fragmentation.push(this.pluck());
+          this.specLoop();
+        }
         this.end = true;
       },
       show (vector) {
@@ -78,22 +107,49 @@
       },
       start () {
         this.fragmentation.push(this.edges.map(edge => edge.isVisible ? 1 : 0));
+        this.isSpec = true;
         this.intervalId = setInterval(() => {
-          let fragmentation = this.pluck();
-          while (!fragmentation) {
-            fragmentation = this.pluck();
-          }
-          if (fragmentation) {
-            this.fragmentation.push(fragmentation);
-          }
-          if (fragmentation.every(edge => !edge)) {
+          if (this.edges.every(edge => !edge.isVisible)) {
             this.end = true;
             clearInterval(this.intervalId);
+            return;
           }
-        }, 0);
+          if (!this.isSpec) {
+            this.edges.forEach((edge, index) => index < 6 && (edge.isVisible = true));
+            this.fragmentation.push(this.pluck());
+            this.isSpec = true;
+          } else {
+            if (this.edges.filter((edge, index) => index < 6).every(edge => !edge.isVisible)) {
+              this.isSpec = false;
+              return;
+            }
+            this.fragmentation.push(this.specPluck());
+          }
+        }, this.iterationTime*1000);
+      },
+      specLoop () {
+        this.edges.forEach((edge, index) => index < 6 && (edge.isVisible = true));
+        while (!this.edges.filter((edge, index) => index < 6).every(edge => !edge.isVisible)) {
+          this.fragmentation.push(this.specPluck());
+        }
+      },
+      specPluck () {
+        for (let i = 0; i < 6; i++) {
+          let edge = this.edges[i];
+          if (edge.isVisible) {
+            if (edge.group === 2) {
+              for (let j = 0; j < 3; j++) {
+                this.edges[j].isVisible = true;
+              }
+            }
+            edge.isVisible = false;
+            break;
+          }
+        }
+        return this.edges.map(edge => edge.isVisible ? 1 : 0);
       },
       pluck () {
-        for (let i = this.edges.length - 1; i >= 0; i--) {
+        for (let i = this.edges.length - 1; i >= 6; i--) {
           let edge = this.edges[i];
           if (edge.isVisible) {
             edge.isVisible = false;
