@@ -1,43 +1,78 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" width="190" height="200" transform="scale(1.5)">
     <g stroke="#000" stroke-width="1.5">
-      <ellipse id="svg_1" cx="157.2" cy="146" fill="#444" rx="13" ry="12.2"/>
-      <path id="edge_23" class="22 24" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M150.2 136.3l-6-24"/>
-      <path id="edge_24" class="23 24" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M145 146.3l-21-3.2"/>
-      <ellipse id="svg_6" cx="143.7" cy="111.8" fill="#f70010" stroke-opacity="null" rx="2.6" ry="2.8"/>
-      <path id="edge_22" class="17 22" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M141.4 110.3l-12.1-17.7"/>
-      <path id="edge_15" class="14 23" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M120.7 141.1L100.4 130"/>
-      <ellipse id="svg_10" cx="98.4" cy="128.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3"/>
-      <path id="edge_14" class="14 15" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M97 125.3l-1.6-25.9"/>
-      <path id="edge_17" class="15 17" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M125.4 89.3l-28.4 7"/>
-      <path id="edge_16" class="15 16" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M91.3 92.9L78.2 80.8"/>
-      <ellipse id="svg_18" cx="75.9" cy="78.8" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
-      <path id="edge_18" class="18 17" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M129.6 87.7L140.1 65"/>
-      <ellipse id="svg_20" cx="98.4" cy="128.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 98.4 128.3)"/>
-      <ellipse id="svg_21" cx="141.5" cy="62.6" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 141.5 62.6)"/>
-      <ellipse id="svg_22" cx="128.4" cy="89.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 128.4 89.3)"/>
-      <ellipse id="svg_24" cx="122.2" cy="142.4" fill="#f70010" stroke-opacity="null" rx="2.6" ry="2.8"/>
-      <ellipse id="svg_25" cx="94.1" cy="95.8" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 94 95.8)"/>
-      <path id="edge_19" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
-      <path id="edge_20" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
-      <path id="edge_21" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
-      <path id="edge_13" class="5 14" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M95.1 129.8l-25.2 9.5"/>
-      <ellipse id="svg_30" cx="69.2" cy="139.6" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 69.2 139.6)"/>
-      <path id="edge_9" class="5 10" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M71.4 143l13.5 27.7"/>
-      <path id="edge_5" class="9 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.7 136.8l-15-22.3"/>
-      <path id="edge_4" class="2 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.3 141.5l-28.8 16.8"/>
-      <ellipse id="svg_34" cx="36.8" cy="159" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 36.8 159)"/>
-      <ellipse id="svg_35" cx="85.7" cy="171.4" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 85.7 171.4)"/>
-      <ellipse id="svg_36" cx="51.4" cy="113" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 51.4 113)"/>
-      <path id="edge_6" class="9 8" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M53.8 110.5l13.5-10.6"/>
-      <path id="edge_8" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
-      <path id="edge_7" class="7 9" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M50.2 110.1l-9.5-14.6"/>
-      <path id="edge_1" class="1 2" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M35.2 155.8l-8.7-14.3"/>
-      <path id="edge_2" class="3 2" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M34.1 161.2l-13.5 10.2"/>
-      <path id="edge_3" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
-      <path id="edge_10" class="10 11" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M82.7 171.8l-14.6 8.8"/>
-      <path id="edge_12" class="10 13" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M88.9 170.4l16.8-6.6"/>
-      <path id="edge_11" class="10 12" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M87 174.4l7 16.4"/>
+      <g>
+        <path id="edge_23" class="22 24" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M150.2 136.3l-6-24"/>
+      </g>
+      <g>
+        <path id="edge_24" class="23 24" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M145 146.3l-21-3.2"/>
+      </g>
+      <g>
+        <path id="edge_22" class="17 22" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M141.4 110.3l-12.1-17.7"/>
+      </g>
+      <g>
+        <path id="edge_21" class="14 23" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M120.7 141.1L100.4 130"/>
+      </g>
+      <g>
+        <path id="edge_18" class="14 15" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M97 125.3l-1.6-25.9"/>
+      </g>
+      <g>
+        <path id="edge_19" class="15 17" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M125.4 89.3l-28.4 7"/>
+      </g>
+      <g>
+        <path id="edge_10" class="15 16" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M91.3 92.9L78.2 80.8"/>
+      </g>
+      <g>
+        <path id="edge_20" class="18 17" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M129.6 87.7L140.1 65"/>
+      </g>
+      <g>
+        <path id="edge_11" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
+      </g>
+      <g>
+        <path id="edge_10" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
+      </g>
+      <g>
+        <path id="edge_12" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
+      </g>
+      <g>
+        <path id="edge_17" class="5 14" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M95.1 129.8l-25.2 9.5"/>
+      </g>
+      <g>
+        <path id="edge_15" class="5 10" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M71.4 143l13.5 27.7"/>
+      </g>
+      <g>
+        <path id="edge_13" class="9 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.7 136.8l-15-22.3"/>
+      </g>
+      <g>
+        <path id="edge_14" class="2 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.3 141.5l-28.8 16.8"/>
+      </g>
+      <g>
+        <path id="edge_6" class="9 8" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M53.8 110.5l13.5-10.6"/>
+      </g>
+      <g>
+        <path id="edge_8" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
+      </g>
+      <g>
+        <path id="edge_7" class="7 9" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M50.2 110.1l-9.5-14.6"/>
+      </g>
+      <g>
+        <path id="edge_1" class="1 2" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M35.2 155.8l-8.7-14.3"/>
+      </g>
+      <g>
+        <path id="edge_2" class="3 2" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M34.1 161.2l-13.5 10.2"/>
+      </g>
+      <g>
+        <path id="edge_3" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
+      </g>
+      <g>
+        <path id="edge_10" class="10 11" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M82.7 171.8l-14.6 8.8"/>
+      </g>
+      <g>
+        <path id="edge_12" class="10 13" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M88.9 170.4l16.8-6.6"/>
+      </g>
+      <g>
+        <path id="edge_11" class="10 12" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M87 174.4l7 16.4"/>
+      </g>
       <ellipse id="svg_47" cx="107.3" cy="163.5" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
       <ellipse id="svg_48" cx="94.6" cy="192" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
       <ellipse id="svg_49" cx="67.2" cy="181.7" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
@@ -50,6 +85,19 @@
       <ellipse id="svg_58" cx="119" cy="47.5" fill="#2bf22b" stroke-opacity="null" rx="3.5" ry="3.5"/>
       <ellipse id="svg_60" cx="161.7" cy="74.5" fill="#2bf22b" stroke-opacity="null" rx="3.5" ry="3.5"/>
       <ellipse id="svg_61" cx="155.5" cy="41.7" fill="#2bf22b" stroke-opacity="null" rx="3.5" ry="3.5"/>
+      <ellipse id="svg_1" cx="157.2" cy="146" fill="#444" rx="13" ry="12.2"/>
+      <ellipse id="svg_6" cx="143.7" cy="111.8" fill="#f70010" stroke-opacity="null" rx="2.6" ry="2.8"/>
+      <ellipse id="svg_10" cx="98.4" cy="128.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3"/>
+      <ellipse id="svg_18" cx="75.9" cy="78.8" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
+      <ellipse id="svg_20" cx="98.4" cy="128.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 98.4 128.3)"/>
+      <ellipse id="svg_21" cx="141.5" cy="62.6" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 141.5 62.6)"/>
+      <ellipse id="svg_22" cx="128.4" cy="89.3" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 128.4 89.3)"/>
+      <ellipse id="svg_24" cx="122.2" cy="142.4" fill="#f70010" stroke-opacity="null" rx="2.6" ry="2.8"/>
+      <ellipse id="svg_25" cx="94.1" cy="95.8" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 94 95.8)"/>
+      <ellipse id="svg_34" cx="36.8" cy="159" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 36.8 159)"/>
+      <ellipse id="svg_35" cx="85.7" cy="171.4" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 85.7 171.4)"/>
+      <ellipse id="svg_36" cx="51.4" cy="113" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 51.4 113)"/>
+      <ellipse id="svg_30" cx="69.2" cy="139.6" fill="#444" stroke-opacity="null" rx="3.3" ry="3.3" transform="rotate(1 69.2 139.6)"/>
       <!--<path id="edge_25" class="24 25" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M169.9 141.2l23.3-9.9"/>-->
       <!--<path id="edge_26" class="24 26" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M165.9 155.4l27.3 7.7"/>-->
       <!--<ellipse id="svg_11" cx="195.5" cy="162.8" fill="#f70010" stroke-opacity="null" rx="2.6" ry="2.8"/>-->
@@ -175,6 +223,9 @@
     methods: {
       fragment () {
         this.edges.forEach(edge => {
+          if (edge.isBlocked) {
+            return;
+          }
           let line = document.getElementsByClassName(edge.vertices.join(' '))[0];
           line.style.display = edge.isVisible ? 'inline-block' : 'none';
         });

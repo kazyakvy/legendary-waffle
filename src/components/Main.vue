@@ -69,7 +69,8 @@
     data () {
       return {
         vertices,
-        edges,
+        edges: edges.filter(edge => !edge.isBlocked),
+        allEdges: edges,
         fragmentation: [],
         outputNumber: 0,
         end: false,
@@ -88,7 +89,7 @@
       finish () {
         clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.edges.map(edge => edge.isVisible ? 1 : 0));
+          this.fragmentation.push(this.allEdges.map(edge => edge.isVisible ? 1 : 0));
           this.specLoop();
         }
         while (!this.edges.filter((edge, index) => index < 6).every(edge => !edge.isVisible)) {
@@ -101,12 +102,12 @@
         this.end = true;
       },
       show (vector) {
-        for (let i = 0; i < vector.length; i++) {
+        for (let i = 0; i < vector.length - 8; i++) {
           this.edges[i].isVisible = !!vector[i];
         }
       },
       start () {
-        this.fragmentation.push(this.edges.map(edge => edge.isVisible ? 1 : 0));
+        this.fragmentation.push(this.allEdges.map(edge => edge.isVisible ? 1 : 0));
         this.isSpec = true;
         this.intervalId = setInterval(() => {
           if (this.edges.every(edge => !edge.isVisible)) {
@@ -146,7 +147,7 @@
             break;
           }
         }
-        return this.edges.map(edge => edge.isVisible ? 1 : 0);
+        return this.allEdges.map(edge => edge.isVisible ? 1 : 0);
       },
       pluck () {
         for (let i = this.edges.length - 1; i >= 6; i--) {
@@ -158,43 +159,8 @@
             edge.isVisible = true;
           }
         }
-//        let visible = this.edges.filter(edge => !edge.isVisible);
-//        let isAllowed = _.every(
-//          visible,
-//          edge =>
-//            edge.dependencies.length
-//              ? _.some(edge.dependencies, dependence => _.every(dependence, id => _.find(this.edges, {id}).isVisible))
-//              : true
-//        );
-//        if (isAllowed) {
-//          return this.edges;
-//        }
-        return this.edges.map(edge => edge.isVisible ? 1 : 0);
-      },
-//      availability (edge, preDependencies) {
-//        if (edge.dependencies.length === 0) {
-//          if (preDependencies) {
-//            return edge.isVisible;
-//          }
-//          return true;
-//        }
-//        let dependencies = edge.dependencies.map(id => this.edges.find(edge => edge.id === id));
-//        if (dependencies.every(edge => !edge.isVisible)) {
-//          return false;
-//        } else if (dependencies.every(edge => edge.isVisible)) {
-//          let filtered = dependencies;
-//          if (preDependencies) {
-//            filtered = dependencies.filter(edge => !preDependencies.find(id => edge.id === id));
-//          }
-//          return filtered.some(edge => this.availability(edge, dependencies.map(edge => edge.id)));
-//        } else {
-//          let dependence = dependencies.find(edge => edge.isVisible);
-//          if (preDependencies && preDependencies.find(id => dependence.id === id)) {
-//            return false;
-//          }
-//          return this.availability(dependence, dependencies.map(edge => edge.id));
-//        }
-//      }
+        return this.allEdges.map(edge => edge.isVisible ? 1 : 0);
+      }
     },
     components: {
       Molecule
