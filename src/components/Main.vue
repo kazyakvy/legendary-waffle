@@ -40,6 +40,20 @@
         </div>
       </div>
     </div>
+    <div class="molecule-info">
+      <div class="info-item">
+        <div class="F atom"></div> - F (фтор)
+      </div>
+      <div class="info-item">
+        <div class="O atom"></div> - O (кислород)
+      </div>
+      <div class="info-item">
+        <div class="H atom"></div> - H (водород)
+      </div>
+      <div class="info-item">
+        <div class="C atom"></div> - C (углерод)
+      </div>
+    </div>
     <div class="svg">
       <molecule :edges="edges"
                 :vertices="vertices"
@@ -102,8 +116,9 @@
         this.end = true;
       },
       show (vector) {
-        for (let i = 0; i < vector.length - 8; i++) {
-          this.edges[i].isVisible = !!vector[i];
+        console.log(vector);
+        for (let i = 7; i < vector.length; i++) {
+          this.edges[i - 7].isVisible = !!vector[i];
         }
       },
       start () {

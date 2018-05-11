@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="190" height="200" transform="scale(2.5)">
+  <svg xmlns="http://www.w3.org/2000/svg" width="190" height="200" transform="scale(3)">
     <g stroke="#000" stroke-width="1.5">
       <g>
         <title>
@@ -39,9 +39,9 @@
       </g>
       <g>
         <title>
-          9
+          7
         </title>
-        <path id="edge_9" class="15 16" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M91.3 92.9L78.2 80.8"/>
+        <path id="edge_7" class="15 16" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M91.3 92.9L78.2 80.8"/>
       </g>
       <g>
         <title>
@@ -51,21 +51,21 @@
       </g>
       <g>
         <title>
-          11
+          9
         </title>
-        <path id="edge_11" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
+        <path id="edge_9" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
+      </g>
+      <g>
+        <title>
+          8
+        </title>
+        <path id="edge_8" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
       </g>
       <g>
         <title>
           10
         </title>
-        <path id="edge_10" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
-      </g>
-      <g>
-        <title>
-          12
-        </title>
-        <path id="edge_12" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
+        <path id="edge_10" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
       </g>
       <g>
         <title>
@@ -75,39 +75,39 @@
       </g>
       <g>
         <title>
-          15
-        </title>
-        <path id="edge_15" class="5 10" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M71.4 143l13.5 27.7"/>
-      </g>
-      <g>
-        <title>
           13
         </title>
-        <path id="edge_13" class="9 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.7 136.8l-15-22.3"/>
+        <path id="edge_13" class="5 10" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M71.4 143l13.5 27.7"/>
       </g>
       <g>
         <title>
-          14
+          11
         </title>
-        <path id="edge_14" class="2 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.3 141.5l-28.8 16.8"/>
+        <path id="edge_11" class="9 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.7 136.8l-15-22.3"/>
       </g>
       <g>
         <title>
-          6
+          12
         </title>
-        <path id="edge_6" class="9 8" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M53.8 110.5l13.5-10.6"/>
+        <path id="edge_12" class="2 5" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M67.3 141.5l-28.8 16.8"/>
       </g>
       <g>
         <title>
           4
         </title>
-        <path id="edge_4" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
+        <path id="edge_4" class="9 8" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M53.8 110.5l13.5-10.6"/>
       </g>
       <g>
         <title>
-          5
+          15
         </title>
-        <path id="edge_5" class="7 9" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M50.2 110.1l-9.5-14.6"/>
+        <path id="edge_15" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
+      </g>
+      <g>
+        <title>
+          3
+        </title>
+        <path id="edge_3" class="7 9" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M50.2 110.1l-9.5-14.6"/>
       </g>
       <g>
         <title>
@@ -123,15 +123,15 @@
       </g>
       <g>
         <title>
-          3
+          12
         </title>
-        <path id="edge_3" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
+        <path id="edge_12" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
       </g>
       <g>
         <title>
-          7
+          5
         </title>
-        <path id="edge_7" class="10 11" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M82.7 171.8l-14.6 8.8"/>
+        <path id="edge_5" class="10 11" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M82.7 171.8l-14.6 8.8"/>
       </g>
       <g>
         <title>
@@ -141,9 +141,9 @@
       </g>
       <g>
         <title>
-          8
+          6
         </title>
-        <path id="edge_8" class="10 12" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M87 174.4l7 16.4"/>
+        <path id="edge_6" class="10 12" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M87 174.4l7 16.4"/>
       </g>
       <ellipse id="svg_47" cx="107.3" cy="163.5" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
       <ellipse id="svg_48" cx="94.6" cy="192" fill="#0f37ff" stroke-opacity="null" rx="2.8" ry="2.8"/>
