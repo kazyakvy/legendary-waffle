@@ -51,21 +51,21 @@
       </g>
       <g>
         <title>
-          9
+          15
         </title>
-        <path id="edge_9" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
+        <path id="edge_15" class="18 19" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M138.5 60.5L121 48.8"/>
       </g>
       <g>
         <title>
-          8
+          14
         </title>
-        <path id="edge_8" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
+        <path id="edge_14" class="18 20" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M143.2 59.8l11.4-17.2"/>
       </g>
       <g>
         <title>
-          10
+          16
         </title>
-        <path id="edge_10" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
+        <path id="edge_16" class="18 21" fill="none" fill-opacity="null" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M144.7 64.1l15 9.2"/>
       </g>
       <g>
         <title>
@@ -99,9 +99,9 @@
       </g>
       <g>
         <title>
-          15
+          9
         </title>
-        <path id="edge_15" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
+        <path id="edge_9" class="9 6" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M49.1 115.2l-14.6 8.4"/>
       </g>
       <g>
         <title>
@@ -123,9 +123,9 @@
       </g>
       <g>
         <title>
-          12
+          8
         </title>
-        <path id="edge_12" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
+        <path id="edge_8" class="2 4" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M39.2 162l8.4 14.9"/>
       </g>
       <g>
         <title>
@@ -135,9 +135,9 @@
       </g>
       <g>
         <title>
-          16
+          10
         </title>
-        <path id="edge_16" class="10 13" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M88.9 170.4l16.8-6.6"/>
+        <path id="edge_10" class="10 13" fill="none" stroke-linecap="null" stroke-linejoin="null" stroke-opacity="null" d="M88.9 170.4l16.8-6.6"/>
       </g>
       <g>
         <title>
@@ -271,7 +271,7 @@
 
 <script>
   export default {
-    props: ['edges', 'vertices', 'fragmentation', 'end'],
+    props: ['edges', 'fragmentation', 'end'],
     watch: {
       fragmentation: {
         handler (fragmentation) {
