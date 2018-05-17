@@ -44,17 +44,20 @@ export default [
   {
     vertices: [4, 2],
     isVisible: true,
-    id: 8
+    id: 8,
+    isBlocked: true
   },
   {
     vertices: [6, 9],
     isVisible: true,
-    id: 9
+    id: 9,
+    isBlocked: true
   },
   {
     vertices: [13, 10],
     isVisible: true,
-    id: 10
+    id: 10,
+    isBlocked: true
   },
   {
     vertices: [5, 9],

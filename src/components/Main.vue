@@ -69,12 +69,12 @@
       ></molecule>
     </div>
     <ol class="list" type="1">
-      <li v-for="structure, index in fragmentation"
+      <li v-for="components, index in fragmentation"
           v-if="index < outputNumber"
           class="list-item"
       >
-        {{ index + 1 }}. {{ structure }}
-        <span v-if="end" class="button is-primary" @click="show(structure)">Показать</span>
+        {{ index + 1 }}. {{ getStructure(components) }}
+        <span v-if="end" class="button is-primary" @click="show(components)">Показать</span>
       </li>
     </ol>
   </div>
@@ -93,7 +93,6 @@
       return {
         vertices,
         edges: edges,
-        allEdges: edges,
         fragmentation: [],
         outputNumber: 0,
         end: false,
@@ -102,7 +101,21 @@
       };
     },
     methods: {
-      show (structure) {
+      show (components) {
+        this.edges.forEach(edge => edge.isVisible = false);
+        components.forEach((component) => {
+          component.forEach((id, index, array) => {
+            this.edges.forEach(edge => {
+              let vertices = edge.vertices;
+              if (
+                (vertices[0] === id && array.indexOf(vertices[1]) !== -1)
+                || (vertices[1] === id && array.indexOf(vertices[0]) !== -1)
+              ) {
+                edge.isVisible = true;
+              }
+            });
+          });
+        });
       },
       stop () {
         clearInterval(this.intervalId);
@@ -116,7 +129,7 @@
       finish () {
         clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getStructure());
+          this.fragmentation.push(this.getComponents());
         }
         while (!this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
           let fragmentation = this.pluck();
@@ -129,7 +142,7 @@
       },
       start () {
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getStructure());
+          this.fragmentation.push(this.getComponents());
         }
         this.intervalId = setInterval(() => {
           let fragmentation = this.pluck();
@@ -153,21 +166,21 @@
             edge.isVisible = true;
           }
         }
-        let structure = this.getStructure();
-//        if (structure.some(component => component === 'C' || component === 'CH')) {
+        let components = this.getComponents();
+//        if (components.some(component => component === 'C' || component === 'CH')) {
 //          return false;
 //        }
-        return this.checkOriginality(structure) ? structure : false;
+        return this.checkOriginality(components) ? components : false;
       },
-      checkOriginality (currentStructure) {
-        return !this.fragmentation.length || this.fragmentation.every(structure => {
-          if (currentStructure.length !== structure.length) {
+      checkOriginality (currentComponents) {
+        return !this.fragmentation.length || this.fragmentation.every(components => {
+          if (currentComponents.length !== components.length) {
             return true;
           }
-          return !_.isEqual(currentStructure, structure);
+          return !_.isEqual(this.getStructure(currentComponents), this.getStructure(components));
         });
       },
-      getStructure () {
+      getComponents () {
         let vertices = this.vertices;
         let structure = [];
         do {
@@ -175,7 +188,10 @@
           structure.push(component);
           vertices = _.difference(vertices, component);
         } while (vertices.length);
-        return structure.map(component => component.map(id => elements[id]).sort().join('')).sort();
+        return structure;
+      },
+      getStructure (components) {
+        return components.map(component => component.map(id => elements[id]).sort().join('')).sort();
       },
       getComponent (id) {
         let usedEdges = [];
@@ -214,9 +230,6 @@
     computed: {
       visibleEdges () {
         return this.edges.filter(edge => edge.isVisible);
-      },
-      vector () {
-        return this.edges.reduce((acc, edge) => acc + `${edge.isVisible ? 1 : 0}`, '');
       }
     },
     components: {
