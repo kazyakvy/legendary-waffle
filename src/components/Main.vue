@@ -10,11 +10,11 @@
         <span class="column is-narrow">
           Разбиений: {{ fragmentation.length }}
         </span>
-        <div class="column is-narrow">
-          <button class="button is-warning" @click="finish" :disabled="end">
-            Закончить
-          </button>
-        </div>
+        <!--<div class="column is-narrow">-->
+          <!--<button class="button is-warning" @click="finish" :disabled="end">-->
+            <!--Закончить-->
+          <!--</button>-->
+        <!--</div>-->
         <div class="column is-narrow">
           <button class="button is-outlined" @click="stop" :disabled="end">
             Пауза
@@ -47,7 +47,7 @@
     </div>
     <div class="molecule-info">
       <div class="info-item">
-        <div class="F atom"></div> - фтор F (18)
+        <div class="F atom"></div> - фтор F (19)
       </div>
       <div class="info-item">
         <div class="O atom"></div> - кислород O (16)
@@ -59,7 +59,7 @@
         <div class="C atom"></div> - углерод C (12)
       </div>
       <div class="info-item">
-        <div class="R atom"></div> - Редко-земельный элемент (175)
+        <div class="R atom"></div> - празеодим Pr (141)
       </div>
     </div>
     <div class="svg">
@@ -69,7 +69,7 @@
       ></molecule>
     </div>
     <ol class="list" type="1">
-      <li v-for="components, index in fragmentation"
+      <li v-for="components, index in outputFragmentation"
           v-if="index < outputNumber"
           class="list-item"
       >
@@ -94,6 +94,7 @@
         vertices,
         edges: edges,
         fragmentation: [],
+        outputFragmentation: [],
         outputNumber: 0,
         end: false,
         intervalId: null,
@@ -129,27 +130,31 @@
       finish () {
         clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getComponents());
+          this.outputFragmentation.push(this.getComponents());
+          this.fragmentation.push(this.getStructure(this.getComponents()));
         }
         while (!this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
           let fragmentation = this.pluck();
           while (!fragmentation) {
             fragmentation = this.pluck();
           }
-          this.fragmentation.push(fragmentation);
+          this.outputFragmentation.push(fragmentation);
+          this.fragmentation.push(this.getStructure(fragmentation));
         }
         this.end = true;
       },
       start () {
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getComponents());
+          this.outputFragmentation.push(this.getComponents());
+          this.fragmentation.push(this.getStructure(this.getComponents()));
         }
         this.intervalId = setInterval(() => {
           let fragmentation = this.pluck();
           while (!fragmentation) {
             fragmentation = this.pluck();
           }
-          this.fragmentation.push(fragmentation);
+          this.outputFragmentation.push(fragmentation);
+          this.fragmentation.push(this.getStructure(fragmentation));
           if (this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
             this.end = true;
             clearInterval(this.intervalId);
@@ -177,21 +182,33 @@
           if (currentComponents.length !== components.length) {
             return true;
           }
-          return !_.isEqual(this.getStructure(currentComponents), this.getStructure(components));
+          return !_.isEqual(currentComponents, components);
         });
       },
       getComponents () {
         let vertices = this.vertices;
-        let structure = [];
+        let components = [];
         do {
           let component = this.getComponent(vertices[0]);
-          structure.push(component);
+          components.push(component);
           vertices = _.difference(vertices, component);
         } while (vertices.length);
-        return structure;
+        return components;
       },
       getStructure (components) {
-        return components.map(component => component.map(id => elements[id]).sort().join('')).sort();
+        return components.map(component => {
+          let string = component.map(id => elements[id]).join('');
+          let cAmount = string.match(/C/g) ? string.match(/C/g).length : false;
+          let fAmount = string.match(/F/g) ? string.match(/F/g).length : false;
+          let hAmount = string.match(/H/g) ? string.match(/H/g).length : false;
+          let oAmount = string.match(/O/g) ? string.match(/O/g).length : false;
+          let rAmount = string.match(/Pr/g) ? string.match(/Pr/g).length : false;
+          return `${cAmount ? `C${cAmount === 1 ? '' : cAmount}` : ''}` +
+            `${fAmount ? `F${fAmount === 1 ? '' : fAmount}` : ''}` +
+            `${hAmount ? `H${hAmount === 1 ? '' : hAmount}` : ''}` +
+            `${oAmount ? `O${oAmount === 1 ? '' : oAmount}` : ''}` +
+            `${rAmount ? `Pr${rAmount === 1 ? '' : rAmount}` : ''}`;
+        }).sort();
       },
       getComponent (id) {
         let usedEdges = [];
