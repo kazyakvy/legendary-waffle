@@ -284,9 +284,11 @@
       },
       edges:{
         handler (edges) {
-          if (this.end) {
-            this.fragment();
-          }
+          this.$nextTick(() => {
+            if (this.end) {
+              this.fragment();
+            }
+          });
         },
         immediate: true,
         deep: true

@@ -47,7 +47,7 @@
     </div>
     <div class="molecule-info">
       <div class="info-item">
-        <div class="F atom"></div> - фтор F (18)
+        <div class="F atom"></div> - фтор F (19)
       </div>
       <div class="info-item">
         <div class="O atom"></div> - кислород O (16)
@@ -59,7 +59,7 @@
         <div class="C atom"></div> - углерод C (12)
       </div>
       <div class="info-item">
-        <div class="R atom"></div> - Редко-земельный элемент (175)
+        <div class="R atom"></div> - празеодим Pr (141)
       </div>
     </div>
     <div class="svg">
@@ -69,12 +69,12 @@
       ></molecule>
     </div>
     <ol class="list" type="1">
-      <li v-for="components, index in fragmentation"
+      <li v-for="structure, index in fragmentation"
           v-if="index < outputNumber"
           class="list-item"
       >
-        {{ index + 1 }}. {{ getStructure(components) }}
-        <span v-if="end" class="button is-primary" @click="show(components)">Показать</span>
+        {{ index + 1 }}. {{ structure }}
+        <!--<span v-if="end" class="button is-primary" @click="show(structure)">Показать</span>-->
       </li>
     </ol>
   </div>
@@ -87,15 +87,16 @@
   import elements from '../configs/elements'
   import weights from '../configs/weights'
   import _ from 'lodash'
+  import fragmentation from '../configs/fragmentation.json'
 
   export default {
     data () {
       return {
         vertices,
         edges: edges,
-        fragmentation: [],
+        fragmentation,
         outputNumber: 0,
-        end: false,
+        end: true,
         intervalId: null,
         iterationTime: 0
       };
@@ -129,7 +130,7 @@
       finish () {
         clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getComponents());
+          this.fragmentation.push(this.getStructure(this.getComponents()));
         }
         while (!this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
           let fragmentation = this.pluck();
@@ -138,11 +139,12 @@
           }
           this.fragmentation.push(fragmentation);
         }
+        localStorage.setItem('fragmentation', JSON.stringify(this.fragmentation));
         this.end = true;
       },
       start () {
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getComponents());
+          this.fragmentation.push(this.getStructure(this.getComponents()));
         }
         this.intervalId = setInterval(() => {
           let fragmentation = this.pluck();
@@ -153,6 +155,7 @@
           if (this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
             this.end = true;
             clearInterval(this.intervalId);
+            localStorage.setItem('fragmentation', JSON.stringify(this.fragmentation));
           }
         }, this.iterationTime*1000);
       },
@@ -166,32 +169,44 @@
             edge.isVisible = true;
           }
         }
-        let components = this.getComponents();
+        let structure = this.getStructure(this.getComponents());
 //        if (components.some(component => component === 'C' || component === 'CH')) {
 //          return false;
 //        }
-        return this.checkOriginality(components) ? components : false;
+        return this.checkOriginality(structure) ? structure : false;
       },
-      checkOriginality (currentComponents) {
-        return !this.fragmentation.length || this.fragmentation.every(components => {
-          if (currentComponents.length !== components.length) {
+      checkOriginality (currentStructure) {
+        return !this.fragmentation.length || this.fragmentation.every(structure => {
+          if (currentStructure.length !== structure.length) {
             return true;
           }
-          return !_.isEqual(this.getStructure(currentComponents), this.getStructure(components));
+          return !_.isEqual(currentStructure, structure);
         });
       },
       getComponents () {
         let vertices = this.vertices;
-        let structure = [];
+        let components = [];
         do {
           let component = this.getComponent(vertices[0]);
-          structure.push(component);
+          components.push(component);
           vertices = _.difference(vertices, component);
         } while (vertices.length);
-        return structure;
+        return components;
       },
       getStructure (components) {
-        return components.map(component => component.map(id => elements[id]).sort().join('')).sort();
+        return components.map(component => {
+          let string = component.map(id => elements[id]).join('');
+          let cAmount = string.match(/C/g) ? string.match(/C/g).length : false;
+          let fAmount = string.match(/F/g) ? string.match(/F/g).length : false;
+          let hAmount = string.match(/H/g) ? string.match(/H/g).length : false;
+          let oAmount = string.match(/O/g) ? string.match(/O/g).length : false;
+          let rAmount = string.match(/Pr/g) ? string.match(/Pr/g).length : false;
+          return `${cAmount ? `C${cAmount === 1 ? '' : cAmount}` : ''}` +
+            `${fAmount ? `F${fAmount === 1 ? '' : fAmount}` : ''}` +
+            `${hAmount ? `H${hAmount === 1 ? '' : hAmount}` : ''}` +
+            `${oAmount ? `O${oAmount === 1 ? '' : oAmount}` : ''}` +
+            `${rAmount ? `Pr${rAmount === 1 ? '' : rAmount}` : ''}`;
+        }).sort();
       },
       getComponent (id) {
         let usedEdges = [];
