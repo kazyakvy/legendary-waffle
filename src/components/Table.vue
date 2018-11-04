@@ -30,7 +30,7 @@
       return {
         fragmentation,
         array: [],
-        regexp: /O2|F2|F3|Pr|C2|C3|C4|C5|C6|C7|C8|C9|C10|H2|H3|H4|H5|H6|H7|H8|H9|H10|H|C|O|F/g
+        regexp: /O2|O3|O4|C2|C3|C4|C5|C6|C7|C8|C9|C10|H2|H3|H4|H5|H6|H7|H8|H9|H10|H11|H12|H13|H14|H|C|O|R/g
       }
     },
     mounted () {
@@ -44,7 +44,7 @@
             elem.amount++;
           } else {
             let weight = component.match(this.regexp).reduce((acc, str) => {
-              if (str === 'Pr' || str.length === 1) {
+              if (str === 'R' || str.length === 1) {
                 return acc + weights[str];
               }
               let number = +str.replace(/\D+/,"");
@@ -63,7 +63,7 @@
       },
       subString (string) {
         return string.match(this.regexp).map(str => {
-          if (str.length === 1 || str === 'Pr') {
+          if (str.length === 1 || str === 'R') {
             return str;
           }
           let number = +str.replace(/\D+/,"");

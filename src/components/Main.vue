@@ -170,9 +170,6 @@
           }
         }
         let structure = this.getStructure(this.getComponents());
-//        if (components.some(component => component === 'C' || component === 'CH')) {
-//          return false;
-//        }
         return this.checkOriginality(structure) ? structure : false;
       },
       checkOriginality (currentStructure) {
@@ -196,16 +193,16 @@
       getStructure (components) {
         return components.map(component => {
           let string = component.map(id => elements[id]).join('');
+          let rAmount = string.match(/R/g) ? string.match(/R/g).length : false;
           let cAmount = string.match(/C/g) ? string.match(/C/g).length : false;
           let fAmount = string.match(/F/g) ? string.match(/F/g).length : false;
           let hAmount = string.match(/H/g) ? string.match(/H/g).length : false;
           let oAmount = string.match(/O/g) ? string.match(/O/g).length : false;
-          let rAmount = string.match(/Pr/g) ? string.match(/Pr/g).length : false;
           return `${cAmount ? `C${cAmount === 1 ? '' : cAmount}` : ''}` +
             `${fAmount ? `F${fAmount === 1 ? '' : fAmount}` : ''}` +
             `${hAmount ? `H${hAmount === 1 ? '' : hAmount}` : ''}` +
             `${oAmount ? `O${oAmount === 1 ? '' : oAmount}` : ''}` +
-            `${rAmount ? `Pr${rAmount === 1 ? '' : rAmount}` : ''}`;
+            `${rAmount ? `R${rAmount === 1 ? '' : rAmount}` : ''}`;
         }).sort();
       },
       getComponent (id) {
