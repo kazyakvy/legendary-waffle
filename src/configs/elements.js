@@ -1,5 +1,5 @@
 export default {
-  1: 'R',
+  1: 'M',
   2: 'O',
   3: 'O',
   4: 'C',

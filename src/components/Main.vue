@@ -59,7 +59,7 @@
         <div class="C atom"></div> - углерод C (12)
       </div>
       <div class="info-item">
-        <div class="R atom"></div> - празеодим Pr (141)
+        <div class="Pr atom"></div> - медь (64)
       </div>
     </div>
     <div class="svg">
@@ -193,7 +193,7 @@
       getStructure (components) {
         return components.map(component => {
           let string = component.map(id => elements[id]).join('');
-          let rAmount = string.match(/R/g) ? string.match(/R/g).length : false;
+          let rAmount = string.match(/M/g) ? string.match(/M/g).length : false;
           let cAmount = string.match(/C/g) ? string.match(/C/g).length : false;
           let fAmount = string.match(/F/g) ? string.match(/F/g).length : false;
           let hAmount = string.match(/H/g) ? string.match(/H/g).length : false;
@@ -202,7 +202,7 @@
             `${fAmount ? `F${fAmount === 1 ? '' : fAmount}` : ''}` +
             `${hAmount ? `H${hAmount === 1 ? '' : hAmount}` : ''}` +
             `${oAmount ? `O${oAmount === 1 ? '' : oAmount}` : ''}` +
-            `${rAmount ? `R${rAmount === 1 ? '' : rAmount}` : ''}`;
+            `${rAmount ? `M${rAmount === 1 ? '' : rAmount}` : ''}`;
         }).sort();
       },
       getComponent (id) {
