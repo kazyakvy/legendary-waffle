@@ -73,8 +73,8 @@
           v-if="index < outputNumber"
           class="list-item"
       >
-        {{ index + 1 }}. {{ structure }}
-        <!--<span v-if="end" class="button is-primary" @click="show(structure)">Показать</span>-->
+        {{ index + 1 }}. {{ getStructure(structure) }}
+        <span v-if="end" class="button is-primary" @click="show(structure)">Показать</span>
       </li>
     </ol>
   </div>
@@ -130,7 +130,7 @@
       finish () {
         clearInterval(this.intervalId);
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getStructure(this.getComponents()));
+          this.fragmentation.push(this.getComponents());
         }
         while (!this.edges.every((edge, index) => edge.isBlocked ? edge.isVisible : !edge.isVisible)) {
           let fragmentation = this.pluck();
@@ -144,7 +144,7 @@
       },
       start () {
         if (!this.fragmentation.length) {
-          this.fragmentation.push(this.getStructure(this.getComponents()));
+          this.fragmentation.push(this.getComponents());
         }
         this.intervalId = setInterval(() => {
           let fragmentation = this.pluck();
@@ -169,15 +169,16 @@
             edge.isVisible = true;
           }
         }
-        let structure = this.getStructure(this.getComponents());
-        return this.checkOriginality(structure) ? structure : false;
+        let structure = this.getComponents();
+        return this.checkOriginality(this.getStructure(structure)) ? structure : false;
       },
       checkOriginality (currentStructure) {
         return !this.fragmentation.length || this.fragmentation.every(structure => {
-          if (currentStructure.length !== structure.length) {
+          let struct = this.getStructure(structure);
+          if (currentStructure.length !== struct.length) {
             return true;
           }
-          return !_.isEqual(currentStructure, structure);
+          return !_.isEqual(currentStructure, struct);
         });
       },
       getComponents () {

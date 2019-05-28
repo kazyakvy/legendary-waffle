@@ -1,11 +1,5 @@
 export default [
   {
-    vertices: [19, 26],
-    isVisible: true,
-    id: 1,
-    isBlocked: true
-  },
-  {
     vertices: [19, 20],
     isVisible: true,
     id: 2,
@@ -24,12 +18,6 @@ export default [
     isBlocked: true
   },
   {
-    vertices: [21, 25],
-    isVisible: true,
-    id: 5,
-    isBlocked: true
-  },
-  {
     vertices: [23, 25],
     isVisible: true,
     id: 6,
@@ -39,12 +27,6 @@ export default [
     vertices: [25, 27],
     isVisible: true,
     id: 7,
-    isBlocked: true
-  },
-  {
-    vertices: [16, 17],
-    isVisible: true,
-    id: 8,
     isBlocked: true
   },
   {
@@ -66,12 +48,6 @@ export default [
     isBlocked: true
   },
   {
-    vertices: [7, 11],
-    isVisible: true,
-    id: 12,
-    isBlocked: true
-  },
-  {
     vertices: [7, 8],
     isVisible: true,
     id: 13,
@@ -81,6 +57,30 @@ export default [
     vertices: [7, 15],
     isVisible: true,
     id: 14,
+    isBlocked: true
+  },
+  {
+    vertices: [19, 26],
+    isVisible: true,
+    id: 1,
+    isBlocked: true
+  },
+  {
+    vertices: [21, 25],
+    isVisible: true,
+    id: 5,
+    isBlocked: true
+  },
+  {
+    vertices: [16, 17],
+    isVisible: true,
+    id: 8,
+    isBlocked: true
+  },
+  {
+    vertices: [7, 11],
+    isVisible: true,
+    id: 12,
     isBlocked: true
   },
   {
